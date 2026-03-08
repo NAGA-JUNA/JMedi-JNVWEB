@@ -1,0 +1,449 @@
+:root {
+    --primary: #0D6EFD;
+    --secondary: #20C997;
+    --dark: #1a1a2e;
+    --light-bg: #f8f9fa;
+}
+
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    color: #333;
+}
+
+.navbar-brand {
+    font-size: 1.8rem;
+    letter-spacing: -1px;
+}
+
+.navbar .nav-link {
+    font-weight: 500;
+    padding: 0.5rem 1rem !important;
+    transition: color 0.3s;
+}
+
+.navbar .nav-link:hover,
+.navbar .nav-link.active {
+    color: var(--primary) !important;
+}
+
+.hero-section {
+    background: linear-gradient(135deg, rgba(13,110,253,0.9), rgba(32,201,151,0.8)), url('/assets/images/hero-bg.jpg') center/cover;
+    min-height: 600px;
+    display: flex;
+    align-items: center;
+    color: white;
+    position: relative;
+    overflow: hidden;
+}
+
+.hero-section::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    height: 80px;
+    background: linear-gradient(transparent, white);
+}
+
+.hero-section h1 {
+    font-size: 3.2rem;
+    font-weight: 700;
+    line-height: 1.2;
+}
+
+.hero-section p {
+    font-size: 1.2rem;
+    opacity: 0.9;
+}
+
+.emergency-banner {
+    background: var(--secondary);
+    color: white;
+    padding: 1rem 0;
+}
+
+.emergency-banner .phone-number {
+    font-size: 1.5rem;
+    font-weight: 700;
+}
+
+.section-title {
+    position: relative;
+    margin-bottom: 3rem;
+    text-align: center;
+}
+
+.section-title h2 {
+    font-size: 2.2rem;
+    font-weight: 700;
+    color: var(--dark);
+    margin-bottom: 0.5rem;
+}
+
+.section-title p {
+    color: #6c757d;
+    max-width: 600px;
+    margin: 0 auto;
+}
+
+.section-title::after {
+    content: '';
+    display: block;
+    width: 60px;
+    height: 3px;
+    background: var(--primary);
+    margin: 1rem auto 0;
+    border-radius: 2px;
+}
+
+.dept-card {
+    border: none;
+    border-radius: 15px;
+    padding: 2rem;
+    text-align: center;
+    transition: all 0.3s ease;
+    background: white;
+    box-shadow: 0 2px 15px rgba(0,0,0,0.06);
+    height: 100%;
+}
+
+.dept-card:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 10px 30px rgba(13,110,253,0.15);
+}
+
+.dept-card .icon-box {
+    width: 80px;
+    height: 80px;
+    border-radius: 50%;
+    background: linear-gradient(135deg, var(--primary), var(--secondary));
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0 auto 1.5rem;
+    font-size: 1.8rem;
+    color: white;
+    transition: all 0.3s;
+}
+
+.dept-card:hover .icon-box {
+    transform: scale(1.1);
+}
+
+.dept-card h5 {
+    font-weight: 600;
+    color: var(--dark);
+    margin-bottom: 0.8rem;
+}
+
+.dept-card p {
+    color: #6c757d;
+    font-size: 0.95rem;
+}
+
+.doctor-card {
+    border: none;
+    border-radius: 15px;
+    overflow: hidden;
+    transition: all 0.3s ease;
+    box-shadow: 0 2px 15px rgba(0,0,0,0.06);
+    height: 100%;
+}
+
+.doctor-card:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 10px 30px rgba(13,110,253,0.15);
+}
+
+.doctor-card .doctor-img {
+    height: 280px;
+    background: linear-gradient(135deg, #e8f4fd, #d4edda);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+    position: relative;
+}
+
+.doctor-card .doctor-img img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.doctor-card .doctor-img .placeholder-icon {
+    font-size: 5rem;
+    color: var(--primary);
+    opacity: 0.5;
+}
+
+.doctor-card .card-body {
+    padding: 1.5rem;
+    text-align: center;
+}
+
+.doctor-card h5 {
+    font-weight: 600;
+    color: var(--dark);
+    margin-bottom: 0.3rem;
+}
+
+.doctor-card .dept-badge {
+    display: inline-block;
+    background: rgba(13,110,253,0.1);
+    color: var(--primary);
+    padding: 0.25rem 0.75rem;
+    border-radius: 20px;
+    font-size: 0.85rem;
+    font-weight: 500;
+}
+
+.appointment-section {
+    background: linear-gradient(135deg, rgba(13,110,253,0.95), rgba(32,201,151,0.9));
+    color: white;
+    padding: 5rem 0;
+}
+
+.appointment-section .form-control,
+.appointment-section .form-select {
+    border-radius: 10px;
+    padding: 0.8rem 1rem;
+    border: 2px solid rgba(255,255,255,0.3);
+    background: rgba(255,255,255,0.15);
+    color: white;
+}
+
+.appointment-section .form-control::placeholder {
+    color: rgba(255,255,255,0.7);
+}
+
+.appointment-section .form-control:focus,
+.appointment-section .form-select:focus {
+    background: rgba(255,255,255,0.25);
+    border-color: white;
+    color: white;
+    box-shadow: none;
+}
+
+.appointment-section .form-select option {
+    color: #333;
+}
+
+.testimonial-card {
+    background: white;
+    border-radius: 15px;
+    padding: 2rem;
+    box-shadow: 0 2px 15px rgba(0,0,0,0.06);
+    text-align: center;
+    margin: 10px;
+}
+
+.testimonial-card .stars {
+    color: #ffc107;
+    font-size: 1.1rem;
+    margin-bottom: 1rem;
+}
+
+.testimonial-card blockquote {
+    font-style: italic;
+    color: #555;
+    font-size: 1rem;
+    line-height: 1.6;
+    margin-bottom: 1.5rem;
+}
+
+.testimonial-card .patient-name {
+    font-weight: 600;
+    color: var(--dark);
+}
+
+.blog-card {
+    border: none;
+    border-radius: 15px;
+    overflow: hidden;
+    transition: all 0.3s ease;
+    box-shadow: 0 2px 15px rgba(0,0,0,0.06);
+    height: 100%;
+}
+
+.blog-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 30px rgba(13,110,253,0.12);
+}
+
+.blog-card .blog-img {
+    height: 200px;
+    background: linear-gradient(135deg, #e8f4fd, #d4edda);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+}
+
+.blog-card .blog-img img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.blog-card .blog-img .placeholder-icon {
+    font-size: 3rem;
+    color: var(--primary);
+    opacity: 0.4;
+}
+
+.blog-card .card-body {
+    padding: 1.5rem;
+}
+
+.blog-card .blog-date {
+    font-size: 0.85rem;
+    color: var(--primary);
+    font-weight: 500;
+}
+
+.blog-card h5 {
+    font-weight: 600;
+    color: var(--dark);
+    margin: 0.5rem 0;
+}
+
+.cta-section {
+    background: var(--dark);
+    padding: 5rem 0;
+    color: white;
+    text-align: center;
+}
+
+.cta-section h2 {
+    font-size: 2.5rem;
+    font-weight: 700;
+    margin-bottom: 1rem;
+}
+
+.page-header {
+    background: linear-gradient(135deg, rgba(13,110,253,0.9), rgba(32,201,151,0.8));
+    padding: 4rem 0;
+    color: white;
+    text-align: center;
+}
+
+.page-header h1 {
+    font-weight: 700;
+    font-size: 2.5rem;
+}
+
+.page-header .breadcrumb {
+    justify-content: center;
+}
+
+.page-header .breadcrumb-item a {
+    color: rgba(255,255,255,0.8);
+    text-decoration: none;
+}
+
+.page-header .breadcrumb-item.active {
+    color: white;
+}
+
+.footer {
+    background: #0f0f1a !important;
+}
+
+.footer-links li {
+    margin-bottom: 0.5rem;
+}
+
+.footer-links a {
+    color: #adb5bd;
+    text-decoration: none;
+    transition: color 0.3s;
+    font-size: 0.95rem;
+}
+
+.footer-links a:hover {
+    color: var(--primary);
+    padding-left: 5px;
+}
+
+.btn-primary {
+    background: var(--primary);
+    border-color: var(--primary);
+    border-radius: 8px;
+    padding: 0.6rem 1.5rem;
+    font-weight: 500;
+    transition: all 0.3s;
+}
+
+.btn-primary:hover {
+    background: #0b5ed7;
+    transform: translateY(-2px);
+    box-shadow: 0 4px 15px rgba(13,110,253,0.3);
+}
+
+.btn-success {
+    background: var(--secondary);
+    border-color: var(--secondary);
+    border-radius: 8px;
+}
+
+.form-control, .form-select {
+    border-radius: 8px;
+    padding: 0.7rem 1rem;
+}
+
+.form-control:focus, .form-select:focus {
+    border-color: var(--primary);
+    box-shadow: 0 0 0 0.2rem rgba(13,110,253,0.15);
+}
+
+.badge-pending { background: #ffc107; color: #333; }
+.badge-approved { background: #20c997; }
+.badge-cancelled { background: #dc3545; }
+
+.profile-page .doctor-info {
+    background: white;
+    border-radius: 15px;
+    padding: 2rem;
+    box-shadow: 0 2px 15px rgba(0,0,0,0.06);
+}
+
+.profile-page .doctor-photo {
+    width: 100%;
+    max-width: 350px;
+    border-radius: 15px;
+    overflow: hidden;
+}
+
+.profile-page .info-list li {
+    padding: 0.8rem 0;
+    border-bottom: 1px solid #eee;
+    display: flex;
+    align-items: center;
+}
+
+.profile-page .info-list li i {
+    width: 35px;
+    color: var(--primary);
+}
+
+.swiper {
+    padding: 20px 0 50px;
+}
+
+.swiper-pagination-bullet-active {
+    background: var(--primary) !important;
+}
+
+@media (max-width: 768px) {
+    .hero-section {
+        min-height: 400px;
+    }
+    .hero-section h1 {
+        font-size: 2rem;
+    }
+    .section-title h2 {
+        font-size: 1.8rem;
+    }
+}
