@@ -1,4 +1,8 @@
 <?php
+if (session_status() === PHP_SESSION_NONE) {
+    session_start();
+}
+
 $db_url = getenv('DATABASE_URL');
 if ($db_url) {
     $parsed = parse_url($db_url);

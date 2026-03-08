@@ -127,9 +127,43 @@ function getTestimonials(PDO $pdo, bool $activeOnly = true): array {
 }
 
 function getCount(PDO $pdo, string $table): int {
-    $allowed = ['doctors', 'departments', 'appointments', 'posts', 'testimonials'];
+    $allowed = ['doctors', 'departments', 'appointments', 'posts', 'testimonials', 'hero_slides', 'menus', 'pages'];
     if (!in_array($table, $allowed)) return 0;
     return (int)$pdo->query("SELECT COUNT(*) FROM $table")->fetchColumn();
+}
+
+function getMenus(PDO $pdo, bool $activeOnly = true): array {
+    $sql = "SELECT * FROM menus";
+    if ($activeOnly) $sql .= " WHERE status = 1";
+    $sql .= " ORDER BY menu_order ASC, id ASC";
+    try {
+        return $pdo->query($sql)->fetchAll();
+    } catch (Exception $e) {
+        return [];
+    }
+}
+
+function getPage(PDO $pdo, string $slug): ?array {
+    try {
+        $stmt = $pdo->prepare("SELECT * FROM pages WHERE page_slug = :slug");
+        $stmt->execute([':slug' => $slug]);
+        return $stmt->fetch() ?: null;
+    } catch (Exception $e) {
+        return null;
+    }
+}
+
+function getHeroSlides(PDO $pdo, bool $activeOnly = false): array {
+    $sql = "SELECT * FROM hero_slides";
+    if ($activeOnly) $sql .= " WHERE status = 1";
+    $sql .= " ORDER BY sort_order ASC, id ASC";
+    return $pdo->query($sql)->fetchAll();
+}
+
+function getHeroSlide(PDO $pdo, int $id): ?array {
+    $stmt = $pdo->prepare("SELECT * FROM hero_slides WHERE id = :id");
+    $stmt->execute([':id' => $id]);
+    return $stmt->fetch() ?: null;
 }
 
 function uploadImage(array $file, string $dir = 'uploads'): ?string {

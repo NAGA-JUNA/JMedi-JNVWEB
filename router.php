@@ -15,6 +15,14 @@ if (preg_match('/\.(css|js|png|jpg|jpeg|gif|webp|ico|svg|woff|woff2|ttf|eot)$/i'
     return;
 }
 
+if (is_dir($filePath)) {
+    $indexPath = rtrim($filePath, '/') . '/index.php';
+    if (file_exists($indexPath)) {
+        require $indexPath;
+        return;
+    }
+}
+
 if (file_exists($filePath) && pathinfo($filePath, PATHINFO_EXTENSION) === 'php') {
     require $filePath;
     return;
